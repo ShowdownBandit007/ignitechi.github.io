@@ -1,0 +1,797 @@
+/* General Styles */
+
+//colors
+$blue: #3c4663;
+$white: #fff;
+$orange-dark: #bb7365;
+$orange: #ff8362;
+$orange-darkest: #965c51;
+
+//fonts
+$serif: Lora,
+serif;
+$sans-serif: Montserrat,
+sans-serif;
+
+//urls
+$url_0: url(../img/header.png);
+$url_1: url(../img/skyline.png);
+$url_2: url(../img/header-small.png);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.title-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: solid 2px $blue;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: $serif;
+    font-size: 48px;
+    color: $orange;
+}
+
+.section-subtitle {
+    font-family: $sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: $blue;
+}
+
+
+.seperator {
+    width: 100%;
+    height: auto;
+    margin-bottom: -2px;
+}
+
+.seperator-dark {
+    width: 100%;
+    height: auto;
+    margin-bottom: -2px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.header-logo {
+    padding: 50px 0 50px 100px;
+}
+
+.header-headline {
+    list-style-type: none;
+    font-size: 64px;
+    font-family: $serif;
+    font-weight: 400;
+    padding: 25px 0 25px 100px;
+
+    li {
+        margin: 15px 0;
+    }
+}
+
+.header-desc {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: $sans-serif;
+    line-height: 1.6rem;
+    padding: 25px 0 25px 100px;
+}
+
+.header-button {
+    margin-top: 30px;
+    display: flex;
+    padding-left: 100px;
+
+    a {
+        text-decoration: none;
+        background-color: $orange;
+        color: $white;
+        font-family: $sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        padding: 25px 35px;
+        border-radius: 10px;
+
+        &:hover {
+            background-color: $orange-dark;
+        }
+    }
+}
+
+.header-image {
+    content: $url_0;
+}
+
+
+.countdown {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 0;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    .timer-wrap {
+        width: 60%;
+        padding: 100px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .time {
+            display: flex;
+            flex-direction: column;
+            margin: 15px;
+
+            .title {
+                font-size: 96px;
+                font-family: $serif;
+                font-weight: 700;
+                color: $blue;
+            }
+
+            .text {
+                font-size: 18px;
+                font-family: $sans-serif;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                padding-top: 15px;
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+.speakers {
+    background-color: $orange;
+    margin-top: -5px;
+}
+
+.speakers-wrap {
+    width: 80%;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 70px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.speaker {
+    padding-bottom: 20px;
+}
+
+.speaker-image {
+    filter: grayscale(100%);
+
+    &:hover {
+        filter: grayscale(0);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.speaker-title,
+.speaker-title a {
+    font-family: $sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    padding-top: 15px;
+    color: $white;
+    text-decoration: none;
+}
+
+.newsletter {
+    background-color: $orange-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px;
+
+    .sub-text {
+        font-family: $serif;
+        font-size: 48px;
+        color: $white;
+        padding-bottom: 15px;
+    }
+
+    .sub-form {
+        width: 70%;
+        display: flex;
+        padding: 30px;
+
+        .sub-input {
+            flex: 1;
+            font-family: $sans-serif;
+            font-size: 18px;
+            background-color: $orange-darkest;
+            border: none;
+            height: 70px;
+            color: $white;
+            padding: 25px;
+        }
+
+        .sub-button {
+            background-color: $white;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            font-family: $sans-serif;
+            font-weight: 900;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 25px 35px;
+            color: $orange-darkest;
+        }
+    }
+}
+
+.speak {
+    margin-top: 150px;
+
+    .speak-wrap {
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 auto;
+        padding-top: 100px;
+        width: 80%;
+
+        .list-item {
+            flex: 0 0 50%;
+            display: flex;
+            margin-bottom: 100px;
+
+            .list-info {
+                display: flex;
+                flex-direction: column;
+                padding: 0 50px 10px 25px;
+
+                .list-title {
+                    font-family: $serif;
+                    font-size: 28px;
+                    color: $blue;
+                    padding-bottom: 10px;
+                }
+
+
+            }
+        }
+    }
+}
+
+.speak-list-desc {
+    font-family: $sans-serif;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.6;
+    color: $blue;
+    padding-bottom: 10px;
+}
+
+.speak-form {
+    background-color: $orange-dark;
+    width: 100%;
+    align-content: center;
+    justify-content: center;
+    margin-top: -5px;
+
+    .speak-title {
+        font-family: $serif;
+        font-size: 36px;
+        color: $white;
+        text-align: center;
+        margin: 0 auto;
+        padding: 50px;
+    }
+}
+
+.events {
+    margin-top: 100px;
+}
+
+.events-wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.gallery {
+    display: flex;
+}
+
+.past-events {
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+
+    .past-title {
+        font-family: $serif;
+        font-size: 28px;
+        color: $blue;
+        border-bottom: 1px solid $blue;
+    }
+}
+
+.date-wrap {
+    margin-top: 30px;
+}
+
+.date-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .date-title {
+        font-family: $sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        color: $blue;
+    }
+
+    .date-link a {
+        font-family: $sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        text-decoration: none;
+        color: $blue;
+
+        &:hover {}
+    }
+}
+
+.sponsors {
+    padding-top: 80px;
+}
+
+.logo-wrap {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    img {
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        filter: grayscale(0%);
+        transition: all 1s ease;
+
+        &:hover {
+            filter: grayscale(100%);
+        }
+    }
+}
+
+.logo-item {
+    margin: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.footer {
+    height: 600px;
+    background-image: $url_1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.footer-wrap {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 15em;
+
+    .footer-title {
+        font-family: $serif;
+        font-size: 48px;
+        letter-spacing: 1px;
+        padding: 40px;
+        color: $white;
+    }
+
+    .footer-subtitle {
+        font-family: $sans-serif;
+        font-size: 28px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $white;
+        padding: 5px;
+    }
+
+    .footer-button {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+
+        a {
+            text-decoration: none;
+            background-color: $white;
+            color: $orange-dark;
+            font-family: $sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            padding: 25px 35px;
+            border-radius: 10px;
+            transition: all 0.5s ease;
+
+            &:hover {
+                background-color: $orange-dark;
+                border: 2px solid $white;
+                color: $white;
+            }
+        }
+    }
+}
+
+.map img {
+    width: 100%;
+}
+
+.inverse {
+    color: $white !important;
+}
+
+.dark {
+    border-bottom: solid 2px $orange-dark !important;
+}
+
+@media(max-width: 576px) {
+    .title-container {
+        flex-direction: column;
+        border-bottom: solid 1px $blue;
+
+        .title {
+            padding-bottom: 15px;
+            font-size: 32px;
+        }
+    }
+
+    .newsletter {
+        padding: 30px;
+
+        .sub-text {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .sub-form {
+            width: 100%;
+            padding: 5px;
+            flex-direction: column;
+            align-items: stretch;
+
+            .sub-input {
+                flex: 100%;
+                margin: 10px 0;
+                padding: 5px;
+            }
+
+            .sub-button {
+                padding: 15px 25px;
+            }
+        }
+    }
+
+    .speak {
+        margin-top: 50px;
+
+        .speak-wrap {
+            padding-top: 50px;
+
+            .list-item {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 100px;
+
+                .list-icon {
+                    margin: 0 auto;
+                    padding-bottom: 10px;
+                }
+
+                .list-info {
+                    padding: 0;
+
+                    .list-title {
+                        text-align: center;
+                        font-size: 28px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .date-item {
+        .date-title {
+            font-size: 16px;
+        }
+
+        .date-link a {
+            font-size: 12px;
+        }
+    }
+
+    .logo-wrap {
+        padding-top: 20px;
+        flex-direction: column;
+
+        .logo-item img {
+            width: 100%;
+        }
+    }
+
+    .logo-item {
+        padding-bottom: 70px;
+    }
+
+    .footer-wrap {
+        .footer-title {
+            padding: 0;
+            font-size: 32px;
+        }
+
+        .footer-subtitle {
+            font-size: 12px;
+            padding-top: 15px;
+        }
+    }
+
+    .header .header-headline {
+        font-size: 42px;
+    }
+
+    .countdown .timer-wrap {
+        flex-direction: column;
+        margin: auto;
+        text-align: center;
+    }
+}
+
+@media(max-width: 992px) {
+    .title-container {
+        .title {
+            font-size: 32px;
+            font-size: 24px;
+        }
+
+        .subtitle {
+            font-size: 12px;
+            font-size: 10px;
+        }
+    }
+
+    .header {
+        height: 100vh;
+    }
+
+    .header-image {
+        content: '';
+    }
+
+    .header-text {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .header-logo {
+        padding: 20px 0;
+    }
+
+    .header-headline {
+        font-size: 64px;
+        padding: 15px 0;
+    }
+
+    .header-desc {
+        padding: 15px 0;
+    }
+
+    .header-button {
+        margin-top: 10px;
+        padding: 0;
+    }
+
+
+    .newsletter {
+        .sub-form {
+            width: 90%;
+            width: 100%;
+
+            .sub-input {
+                height: 50px;
+                padding: 25px;
+            }
+
+            .sub-button {
+                padding: 5px 25px;
+            }
+        }
+
+        .sub-text {
+            font-size: 32px;
+        }
+    }
+
+    .events-wrap {
+        flex-direction: column;
+    }
+
+    .gallery {
+        margin: auto;
+
+        .gallery-item img {
+            width: 100%;
+        }
+    }
+
+    .past-events {
+        width: 100%;
+        margin: auto;
+        margin-top: 60px;
+    }
+
+    .footer-wrap {
+        .footer-title {
+            font-size: 36px;
+            padding: 20px;
+            font-size: 28px;
+            padding: 20px;
+        }
+
+        .footer-subtitle {
+            font-size: 18px;
+            font-size: 14px;
+        }
+
+        .footer-button {
+            margin-top: 30px;
+            margin-top: 30px;
+
+            a {
+                font-size: 14px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .countdown .timer-wrap {
+        width: 80%;
+
+        .time {
+            .title {
+                font-size: 72px;
+            }
+
+            .text {
+                font-size: 12px;
+            }
+        }
+    }
+
+    .speak .speak-wrap .list-item {
+        flex: 100%;
+
+        .list-info {
+            padding: 0 0 10px 25px;
+        }
+    }
+
+    .speak-form .speak-title {
+        font-size: 26px;
+    }
+}
+
+@media(max-width: 1200px) {
+    .header-logo {
+        padding: 50px 0 50px 50px;
+    }
+
+    .header-image {
+        content: $url_2;
+    }
+
+    .header-headline {
+        font-size: 48px;
+        padding: 15px 0 15px 50px;
+    }
+
+    .header-desc {
+        font-size: 14px;
+        padding: 25px 0 25px 50px;
+    }
+
+    .header-button {
+        margin-top: 30px;
+        padding-left: 50px;
+
+        a {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 20px 30px;
+            border-radius: 10px;
+        }
+    }
+
+
+    .newsletter {
+        padding: 60px;
+
+        .sub-text {
+            font-size: 40px;
+        }
+
+        .sub-form {
+            width: 80%;
+        }
+    }
+
+    .past-events {
+        width: 30%;
+    }
+
+    .countdown .timer-wrap {
+        padding: 70px 0;
+        width: 70%;
+    }
+
+    .speak .speak-wrap .list-item .list-info {
+        .list-title {
+            font-size: 24px;
+        }
+
+
+    }
+
+    .speak-list-desc {
+        font-size: 14px;
+    }
+
+    .logo-wrap .logo-item img {
+        width: 170px;
+    }
+}

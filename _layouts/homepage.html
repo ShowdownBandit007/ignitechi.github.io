@@ -42,8 +42,8 @@
 
   <section class="countdown">
     <div class="title-container">
-      <div class="title">Show starts in</div>
-      <div class="subtitle">Let the countdown begin</div>
+      <h2 class="section-title">Show starts in</h2>
+      <div class="section-subtitle">Let the countdown begin</div>
     </div>
     <div id="countdown" class="timer-wrap" data-date="{{ event.main.start-date | date_to_xmlschema }}">
       <div class="time">
@@ -82,14 +82,15 @@
   </section>
   <div class="seperator">
     <svg viewBox="0 0 1440 154" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0V196H1440V0H908.524L711.978 67L515.432 0H0Z" fill="#FF8362" /></svg>
+      <path d="M0 0V196H1440V0H908.524L711.978 67L515.432 0H0Z" fill="#FF8362" />
+    </svg>
   </div>
 
   {% if event.speakers %}
   <section class="speakers">
     <div class="title-container dark">
-      <div class="title inverse">Featuring talks from</div>
-      <div class="subtitle inverse">Meet the speakers</div>
+      <h2 class="section-title inverse">Featuring talks from</h2>
+      <div class="section-subtitle inverse">Meet the speakers</div>
     </div>
     <div class="speakers-wrap">
       {% assign speakers = event.speakers | sort:'name' %}
@@ -174,14 +175,7 @@
         </div>
         <div class="list-info">
           <div class="list-title">Who's this for?</div>
-          <div class="list-desc">
-            Speaking at Ignite is an unforgettable experience. You step up to the mic. Your palms sweat. You
-            can
-            hear the thump of
-            your blood rushing. Your voice cracks for an instant and then you launch into a rant for 300
-            straight seconds, wearing
-            your passion on your sleeve, barely pausing to breathe. The crowd goes wild.
-          </div>
+          <div class="speak-list-desc">Speaking at Ignite is an unforgettable experience. You step up to the mic. Your palms sweat. You can hear the thump of your blood rushing. Your voice cracks for an instant and then you launch into a rant for 300 straight seconds, wearing your passion on your sleeve, barely pausing to breathe. The crowd goes wild.</div>
         </div>
       </div>
       <div class="list-item">
@@ -195,7 +189,7 @@
         </div>
         <div class="list-info">
           <div class="list-title">What's your burning idea?</div>
-          <div class="list-desc">
+          <div class="speak-list-desc">
             There is no theme for Ignite. You can talk about virtually anything as long as you can show us
             your
             passion for it.
@@ -221,7 +215,7 @@
         </div>
         <div class="list-info">
           <div class="list-title">Format</div>
-          <div class="list-desc">
+          <div class="speak-list-desc">
             All speakers get equal time and equal billing. All talks are 5 minutes. You create 20 slides,
             and we
             set them up to auto-advance every 15 seconds.
@@ -239,16 +233,7 @@
         </div>
         <div class="list-info">
           <div class="list-title">The Ignite Audience</div>
-          <div class="list-desc">
-            The audience at Ignite is generous and patient. They know the Ignite format is difficult, and
-            they
-            realize you might be
-            an absolute beginner at public speaking. Don't worry – they've got your back. You're giving them
-            your passion and your
-            vulnerability, and they love you for that. You won't find a more appreciative audience at any
-            other
-            event.
-          </div>
+          <div class="speak-list-desc">The audience at Ignite is generous and patient. They know the Ignite format is difficult, and they realize you might be an absolute beginner at public speaking. Don't worry – they've got your back. You're giving them your passion and your vulnerability, and they love you for that. You won't find a more appreciative audience at any other event.</div>
         </div>
       </div>
       <div class="list-item">
@@ -263,7 +248,7 @@
         </div>
         <div class="list-info">
           <div class="list-title">This ain't self-help time</div>
-          <div class="list-desc">
+          <div class="speak-list-desc">
             Some people think Ignite is about self-help talks. It isn't. Nobody wants to hear a preachy pep
             talk. We're already
             "good enough and smart enough," so let's keep this about you and your passionate ideas.
@@ -286,7 +271,7 @@
         </div>
         <div class="list-info">
           <div class="list-title">Seriously, no pitching</div>
-          <div class="list-desc">
+          <div class="speak-list-desc">
             Finally, we're serious about the no pitching thing. We know that sometimes a speaker must
             mention
             their profession in

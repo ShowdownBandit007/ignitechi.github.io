@@ -69,6 +69,8 @@ exclude:
   - "*.sh"
   - readme.md
   - .DS_Store
+  - "docker-*"
+  - ".vscode"
 
 include:
   - "_pages"
