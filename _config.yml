@@ -1,8 +1,9 @@
 # Current event month
 event:
-  month: 2019-05
+  month: "2019-05-28"
   title: "May 2019 Event - Ignite Talks Chicago"
   alert: "Super Early Bird tickets are for sale now. Get them before they sell out!"
+
 
 collections:
   events:

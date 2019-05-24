@@ -1,19 +1,13 @@
 /* General Styles */
 
-//colors
+// Colors
 $blue: #3c4663;
 $white: #fff;
 $orange-dark: #bb7365;
 $orange: #ff8362;
 $orange-darkest: #965c51;
 
-//fonts
-$serif: Lora,
-serif;
-$sans-serif: Montserrat,
-sans-serif;
-
-//urls
+// URLs
 $url_0: url(../img/header.png);
 $url_1: url(../img/skyline.png);
 $url_2: url(../img/header-small.png);
@@ -22,6 +16,34 @@ $url_2: url(../img/header-small.png);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $white;
+    opacity: 1;
+    /* Firefox */
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $white;
+}
+
+::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $white;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }
 
 
@@ -36,14 +58,19 @@ $url_2: url(../img/header-small.png);
     margin: 0 auto;
 }
 
+section {
+    position: relative;
+}
+
 .section-title {
-    font-family: $serif;
+    font-family: Lora, serif;
+    font-weight: 400;
     font-size: 48px;
     color: $orange;
 }
 
 .section-subtitle {
-    font-family: $sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -63,6 +90,8 @@ $url_2: url(../img/header-small.png);
     height: auto;
     margin-bottom: -2px;
 }
+
+
 
 .header {
     display: flex;
@@ -84,7 +113,7 @@ $url_2: url(../img/header-small.png);
 .header-headline {
     list-style-type: none;
     font-size: 64px;
-    font-family: $serif;
+    font-family: 'Lora', serif;
     font-weight: 400;
     padding: 25px 0 25px 100px;
 
@@ -96,7 +125,7 @@ $url_2: url(../img/header-small.png);
 .header-desc {
     font-size: 18px;
     font-weight: 500;
-    font-family: $sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6rem;
     padding: 25px 0 25px 100px;
 }
@@ -110,7 +139,7 @@ $url_2: url(../img/header-small.png);
         text-decoration: none;
         background-color: $orange;
         color: $white;
-        font-family: $sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 14px;
         text-transform: uppercase;
@@ -151,14 +180,14 @@ $url_2: url(../img/header-small.png);
 
             .title {
                 font-size: 96px;
-                font-family: $serif;
+                font-family: 'Lora', serif;
                 font-weight: 700;
                 color: $blue;
             }
 
             .text {
                 font-size: 18px;
-                font-family: $sans-serif;
+                font-family: 'Montserrat', sans-serif;
                 font-weight: 700;
                 text-transform: uppercase;
                 letter-spacing: 2px;
@@ -171,7 +200,15 @@ $url_2: url(../img/header-small.png);
 
 .speakers {
     background-color: $orange;
-    margin-top: -5px;
+    // margin-top: -5px;
+}
+
+.speakers.seperator-triangle {
+    padding-top: 200px;
+}
+
+.speakers.seperator-triangle::before {
+    border-top-color: $white;
 }
 
 .speakers-wrap {
@@ -198,12 +235,13 @@ $url_2: url(../img/header-small.png);
     img {
         width: 100%;
         height: auto;
+        border-radius: 50%;
     }
 }
 
 .speaker-title,
 .speaker-title a {
-    font-family: $sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 21px;
     font-weight: 700;
     padding-top: 15px;
@@ -220,7 +258,7 @@ $url_2: url(../img/header-small.png);
     padding: 100px;
 
     .sub-text {
-        font-family: $serif;
+        font-family: 'Lora', serif;
         font-size: 48px;
         color: $white;
         padding-bottom: 15px;
@@ -233,7 +271,7 @@ $url_2: url(../img/header-small.png);
 
         .sub-input {
             flex: 1;
-            font-family: $sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-size: 18px;
             background-color: $orange-darkest;
             border: none;
@@ -247,7 +285,7 @@ $url_2: url(../img/header-small.png);
             border: none;
             text-align: center;
             text-decoration: none;
-            font-family: $sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: 12px;
             text-transform: uppercase;
@@ -258,41 +296,49 @@ $url_2: url(../img/header-small.png);
     }
 }
 
+
+.speak.seperator-big-triangle::after,
+.speak.seperator-big-triangle::before {
+    /*  change the height and the color below */
+    border-bottom: 160px solid $orange-dark;
+}
+
 .speak {
     margin-top: 150px;
 
-    .speak-wrap {
+    .list-item {
+        flex: 0 0 50%;
         display: flex;
-        flex-flow: row wrap;
-        margin: 0 auto;
-        padding-top: 100px;
-        width: 80%;
+        margin-bottom: 100px;
 
-        .list-item {
-            flex: 0 0 50%;
+        .list-info {
             display: flex;
-            margin-bottom: 100px;
+            flex-direction: column;
+            padding: 0 50px 10px 25px;
 
-            .list-info {
-                display: flex;
-                flex-direction: column;
-                padding: 0 50px 10px 25px;
-
-                .list-title {
-                    font-family: $serif;
-                    font-size: 28px;
-                    color: $blue;
-                    padding-bottom: 10px;
-                }
-
-
+            .list-title {
+                font-family: 'Lora', serif;
+                font-size: 28px;
+                color: $blue;
+                padding-bottom: 10px;
             }
+
+
         }
     }
 }
 
+.speak-wrap {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    width: 80%;
+}
+
 .speak-list-desc {
-    font-family: $sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     text-align: justify;
     line-height: 1.6;
@@ -305,10 +351,10 @@ $url_2: url(../img/header-small.png);
     width: 100%;
     align-content: center;
     justify-content: center;
-    margin-top: -5px;
+    padding-top: 100px;
 
     .speak-title {
-        font-family: $serif;
+        font-family: 'Lora', serif;
         font-size: 36px;
         color: $white;
         text-align: center;
@@ -339,7 +385,7 @@ $url_2: url(../img/header-small.png);
     flex-direction: column;
 
     .past-title {
-        font-family: $serif;
+        font-family: 'Lora', serif;
         font-size: 28px;
         color: $blue;
         border-bottom: 1px solid $blue;
@@ -348,6 +394,7 @@ $url_2: url(../img/header-small.png);
 
 .date-wrap {
     margin-top: 30px;
+    column-count: 2;
 }
 
 .date-item {
@@ -357,20 +404,18 @@ $url_2: url(../img/header-small.png);
     margin-bottom: 20px;
 
     .date-title {
-        font-family: $sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 700;
         font-size: 18px;
         color: $blue;
     }
 
     .date-link a {
-        font-family: $sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-weight: 500;
         font-size: 18px;
         text-decoration: none;
         color: $blue;
-
-        &:hover {}
     }
 }
 
@@ -421,7 +466,7 @@ $url_2: url(../img/header-small.png);
     padding-top: 15em;
 
     .footer-title {
-        font-family: $serif;
+        font-family: 'Lora', serif;
         font-size: 48px;
         letter-spacing: 1px;
         padding: 40px;
@@ -429,7 +474,7 @@ $url_2: url(../img/header-small.png);
     }
 
     .footer-subtitle {
-        font-family: $sans-serif;
+        font-family: 'Montserrat', sans-serif;
         font-size: 28px;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -446,7 +491,7 @@ $url_2: url(../img/header-small.png);
             text-decoration: none;
             background-color: $white;
             color: $orange-dark;
-            font-family: $sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 14px;
             text-transform: uppercase;
@@ -516,31 +561,31 @@ $url_2: url(../img/header-small.png);
     .speak {
         margin-top: 50px;
 
-        .speak-wrap {
-            padding-top: 50px;
+        .list-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 100px;
 
-            .list-item {
-                display: flex;
-                flex-direction: column;
-                margin-bottom: 100px;
+            .list-icon {
+                margin: 0 auto;
+                padding-bottom: 10px;
+            }
 
-                .list-icon {
-                    margin: 0 auto;
+            .list-info {
+                padding: 0;
+
+                .list-title {
+                    text-align: center;
+                    font-size: 28px;
+                    padding-top: 10px;
                     padding-bottom: 10px;
-                }
-
-                .list-info {
-                    padding: 0;
-
-                    .list-title {
-                        text-align: center;
-                        font-size: 28px;
-                        padding-top: 10px;
-                        padding-bottom: 10px;
-                    }
                 }
             }
         }
+    }
+
+    .speak-wrap {
+        padding-top: 50px;
     }
 
     .date-item {

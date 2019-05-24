@@ -1,0 +1,198 @@
+//
+// Section Divider
+//
+
+
+// Multi Triangles
+.seperator-multi-triangles::before,
+.seperator-multi-triangles::after {
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+.seperator-multi-triangles::before {
+    top: -25px;
+    background: #348227;
+    box-shadow: -50px 50px 0 #348227, 50px -50px 0 #348227;
+}
+
+.seperator-multi-triangles::after {
+    bottom: -25px;
+    z-index: 10;
+    background: #348227;
+    box-shadow: -50px 50px 0 #348227, 50px -50px 0 #348227;
+}
+
+// Half Circle
+.seperator-half-circle::before,
+.seperator-half-circle::after {
+    left: 50%;
+    z-index: 10;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #8e2f1c;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+.seperator-half-circle::before {
+    top: -50px;
+}
+
+.seperator-half-circle::after {
+    bottom: -50px;
+}
+
+// Big Triangle
+.seperator-big-triangle::before {
+    right: 50%;
+    border-right: 1000px solid transparent;
+    border-left: 1000px solid;
+}
+
+.seperator-big-triangle::after {
+    left: 50%;
+    border-left: 1000px solid transparent;
+    border-right: 1000px solid;
+}
+
+.seperator-big-triangle::after,
+.seperator-big-triangle::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 50%;
+    z-index: 100;
+    border-bottom: 180px solid #1e73be;
+    -moz-transform: rotate(0.000001deg);
+    -webkit-transform: rotate(0.000001deg);
+    -o-transform: rotate(0.000001deg);
+    -ms-transform: rotate(0.000001deg);
+    transform: rotate(0.000001deg);
+}
+
+// Single Triangle
+// .triangle {
+//     width: 100%;
+//     height: 200px;
+//     padding-top: 60px;
+//     border-top: 1px solid black;
+//     position: relative;
+//     text-align: center;
+// }
+
+.seperator-triangle::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: calc(50% - 250px);
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-top: 100px solid black;
+}
+
+// Triangles
+.seperator-triangles::before,
+.seperator-triangles::after {
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    -webkit-transform: translateX(-50%) rotate(45deg);
+    transform: translateX(-50%) rotate(45deg);
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+.seperator-triangles::before {
+    top: -50px;
+    background: #112f38;
+    z-index: 10;
+}
+
+.seperator-triangles::after {
+    bottom: -50px;
+    z-index: 10;
+    background: #112f38;
+}
+
+// Diagonals
+.seperator-double-diagonal {
+    z-index: 1;
+    padding-top: 6em;
+    background: #dd3333;
+}
+
+.seperator-double-diagonal::before,
+.seperator-double-diagonal::after {
+    top: 0;
+    left: -25%;
+    z-index: -1;
+    width: 150%;
+    height: 75%;
+    background: inherit;
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}
+
+.seperator-double-diagonal::before {
+    height: 50%;
+    background: inherit;
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+    -webkit-transform-origin: 3% 0;
+    transform-origin: 3% 0;
+}
+
+/*left diagonal */
+/*diagonals*/
+
+.sseperator-double-diagonal {
+    z-index: 1;
+    padding-top: 6em;
+    background: #dd3333;
+}
+
+.sseperator-double-diagonal::before {
+    height: 50%;
+    background: #dd3333;
+    -webkit-transform: rotate(-3deg);
+    transform: rotate(3deg);
+    -webkit-transform-origin: -3% 0;
+    transform-origin: -3% 0;
+}
+
+.sseperator-double-diagonal::before,
+.sseperator-double-diagonal::after {
+    top: -28%;
+    left: -25%;
+    z-index: -1;
+    width: 150%;
+    height: 75%;
+    background: #3A0808;
+    -webkit-transform: rotate(-2deg);
+    transform: rotate(3deg);
+    -webkit-transform-origin: -3% 0;
+    transform-origin: -3% 0;
+    position: absolute;
+    content: '';
+    pointer-events: none;
+}

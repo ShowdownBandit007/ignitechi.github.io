@@ -1,3 +1,6 @@
+{%- assign event = site.events | where: "event-date", site.event.month -%}
+{%- assign event_start = event.event-date | append: 'T' | append: event.start-time -%}
+{%- assign event_end = event.event-date | append: 'T' | append: event.end-time -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,12 +14,10 @@
   {% else %}
   <title>{{ site.event.title }} - Ignite Chicago</title>
   {% endif %}
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:400,500,700&display=swap" rel="stylesheet">
   <link href="{{ 'assets/css/style.css' | prepend: site.baseurl }}" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:400,500,700" rel="stylesheet">
 </head>
 <body>
-  {%- assign event = site.data[site.event.month] -%}
-
   <section class="header">
     <div class="header-text">
       <div class="header-logo">
@@ -28,8 +29,9 @@
         <li>One Passion.</li>
       </ul>
       <div class="header-desc">
-        {{ event.main.start-date | date: "%a, %B %d" }} from {{ event.main.start-date | date: "%l:%M %P" }} to {{ event.main.end-date | date: "%l:%M %P" }}<br>
-        {{ event.main.location-name }}, {{ event.main.location-address }}
+      {{ event }}
+        {{ event_start | date: "%a, %B %d" }} from {{ event_start | date: "%l:%M %P" }} to {{ event_end | date: "%l:%M %P" }}<br>
+        {{ event.location-name }}, {{ event.location-address }}
       </div>
       <div class="header-button">
         <a href="#">Reserve my Seat</a>
@@ -40,12 +42,12 @@
     </div>
   </section>
 
-  <section class="countdown">
+  <section class="countdown ">
     <div class="title-container">
       <h2 class="section-title">Show starts in</h2>
       <div class="section-subtitle">Let the countdown begin</div>
     </div>
-    <div id="countdown" class="timer-wrap" data-date="{{ event.main.start-date | date_to_xmlschema }}">
+    <div id="countdown" class="timer-wrap" data-date="{{ event.main.start-time | date_to_xmlschema }}">
       <div class="time">
         <div class="title days">
           00
@@ -80,14 +82,9 @@
       </div>
     </div>
   </section>
-  <div class="seperator">
-    <svg viewBox="0 0 1440 154" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0V196H1440V0H908.524L711.978 67L515.432 0H0Z" fill="#FF8362" />
-    </svg>
-  </div>
 
   {% if event.speakers %}
-  <section class="speakers">
+  <section class="speakers seperator-triangle">
     <div class="title-container dark">
       <h2 class="section-title inverse">Featuring talks from</h2>
       <div class="section-subtitle inverse">Meet the speakers</div>
@@ -150,18 +147,20 @@
   </section>
   {% endif %}
 
-
   <section class="newsletter">
     <p class="sub-text">Subscribe for future events</p>
-    <div class="sub-form">
-      <input type="text" class="sub-input" name="subscribe" id="">
-      <button class="sub-button">Subscribe Now</button>
-    </div>
+    <form action="https://ignitechi.us1.list-manage.com/subscribe/post?u=1b6bed3f7022302e88e2c266b&amp;id=6b0150148e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="sub-form validate" target="_blank" novalidate>
+      <label class="visuallyhidden">Email address</label>
+      <input type="email" value="" name="EMAIL" class="sub-input" id="mce-EMAIL" placeholder="Enter your email address" required>
+      <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1b6bed3f7022302e88e2c266b_6b0150148e" tabindex="-1" value=""></div>
+      <input type="submit" value="Subscribe Now &rarr;" name="subscribe" id="mc-embedded-subscribe" class="sub-button">
+    </form>
   </section>
-  <section class="speak">
+
+  <section class="speak seperator-big-triangle">
     <div class="title-container">
-      <div class="title">Speak at Ignite</div>
-      <div class="subtitle">Show us your passion</div>
+      <div class="section-title">Speak at Ignite</div>
+      <div class="section-subtitle">Show us your passion</div>
     </div>
     <div class="speak-wrap">
       <div class="list-item">
@@ -285,14 +284,8 @@
     </div>
   </section>
 
-  <div class="seperator-dark">
-    <svg viewBox="0 0 1440 196" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0V196H1440V0H908.524L711.978 67L515.432 0H0Z" fill="#BB7365" />
-    </svg>
-  </div>
-
   <section class="speak-form">
-    <div class="speak-title">What is your talk topic about?</div>
+    <script type="text/javascript" src="https://form.jotform.com/jsform/82056284209154"></script>
   </section>
 
   <section class="map">
@@ -301,8 +294,8 @@
 
   <section class="events">
     <div class="title-container">
-      <div class="title">Our Events</div>
-      <div class="subtitle">Are full of laughter and fun</div>
+      <div class="section-title">Our Events</div>
+      <div class="section-subtitle">Are full of laughter and fun</div>
     </div>
     <div class="events-wrap">
       <div class="gallery">
@@ -312,59 +305,19 @@
       </div>
       <div class="past-events">
         <div class="past-title">Past Events</div>
+
         <div class="date-wrap">
+        {% assign _events = site.events | sort: 'start-time' | reverse %}
+        {% for e in _events %}
           <div class="date-item">
-            <div class="date-title">30 May 2019</div>
-            <div class="date-link">
-              <a href="">Click here</a>
-            </div>
+              <a href="{{ site.baseurl }}events/{{ e.start-time | date: '%Y-%m' }}" class="date-title">{{ e.start-time | date: "%B %Y" }}</a>
           </div>
-          <div class="date-item">
-            <div class="date-title">30 May 2019</div>
-            <div class="date-link">
-              <a href="">Click here</a>
-            </div>
-          </div>
-          <div class="date-item">
-            <div class="date-title">30 May 2019</div>
-            <div class="date-link">
-              <a href="">Click here</a>
-            </div>
-          </div>
-          <div class="date-item">
-            <div class="date-title">30 May 2019</div>
-            <div class="date-link">
-              <a href="">Click here</a>
-            </div>
-          </div>
-          <div class="date-item">
-            <div class="date-title">30 May 2019</div>
-            <div class="date-link">
-              <a href="">Click here</a>
-            </div>
-          </div>
-          <div class="date-item">
-            <div class="date-title">30 May 2019</div>
-            <div class="date-link">
-              <a href="">Click here</a>
-            </div>
-          </div>
-          <div class="date-item">
-            <div class="date-title">30 May 2019</div>
-            <div class="date-link">
-              <a href="">Click here</a>
-            </div>
-          </div>
-          <div class="date-item">
-            <div class="date-title">30 May 2019</div>
-            <div class="date-link">
-              <a href="">Click here</a>
-            </div>
-          </div>
+        {% endfor %}
         </div>
       </div>
     </div>
   </section>
+
   <section class="sponsors">
     <div class="title-container">
       <div class="title">Our Sponsors</div>
