@@ -2,7 +2,7 @@
 event:
   month: 2019-05
   title: "May 2019 Event - Ignite Talks Chicago"
-  alert: "Super Early Bird tickets are for sale now. Get them before they sell out!"
+  alert: "Sold out event!"
 
 collections:
   events:
