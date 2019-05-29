@@ -1,8 +1,8 @@
 # Current event month
 event:
-  month: 2019-05
-  title: "May 2019 Event - Ignite Talks Chicago"
-  alert: "Sold out event!"
+  month: 2019-06
+  title: "June 2019 Event - Ignite Talks Chicago"
+  alert: "Super Early Bird tickets are for sale now. Get them before they sell out!"
 
 collections:
   events:
