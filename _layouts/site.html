@@ -29,8 +29,8 @@ layout: default
       {%- if event.main.soldout or eventtime < nowunix -%}
       <span class="btn btn-default btn-xl">SOLD OUT</span>
       {%- else -%}
-        <a class="btn btn-default btn-xl" href="#" data-toggle="modal" data-target="#eventbrite-register">Reserve my seat</a>
-        <p class="cta_urgency">Tickets sell out fast.</p>
+      <a class="btn btn-default btn-xl" href="#" data-toggle="modal" data-target="#eventbrite-register">Reserve my seat</a>
+      <p class="cta_urgency">Tickets sell out fast.</p>
       {%- endif -%}
     </div>
   </div>
@@ -162,13 +162,13 @@ layout: default
             {%- assign imageindex = 0 -%}
             {%- assign gallery_images = site.static_files | where: "gallery", true -%}
             {%- for image in gallery_images -%}
-              {%- assign mod = imageindex | modulo: 9 -%}
+            {%- assign mod = imageindex | modulo: 9 -%}
             <div class="col-sm-6 {% if mod == 0 %}col-md-6{% else %}col-md-3{% endif %}">
               <a href="{{ site.baseurl }}assets/img/gallery/full/{{ image.name }}" title="">
                 <img src="{{ site.baseurl }}assets/img/gallery/thumb/{{ image.name }}" alt="" class="img-responsive">
               </a>
             </div>
-              {%- assign imageindex = imageindex | plus: 1 -%}
+            {%- assign imageindex = imageindex | plus: 1 -%}
             {%- endfor -%}
           </div>
         </div>
@@ -238,7 +238,7 @@ layout: default
 </section>
 
 <section>
-  <script type="text/javascript" src="https://form.jotform.com/jsform/82056284209154"></script>
+  <script type="text/javascript" src="https://form.jotform.com/jsform/91496262871264"></script>
 </section>
 
 {% if event.sponsors %}
@@ -271,7 +271,24 @@ layout: default
 </section>
 
 <section id="contact" class="contact">
-  <div class="typeform-widget" data-url="https://ignitechicago.typeform.com/to/gX8AcL" data-transparency="100" data-hide-headers=true data-hide-footer=true style="width: 100%; height: 500px;"></div><script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm", b="https://embed.typeform.com/"; if(!gi.call(d,id)) { js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+  <div class="typeform-widget" data-url="https://ignitechicago.typeform.com/to/gX8AcL" data-transparency="100" data-hide-headers=true data-hide-footer=true style="width: 100%; height: 500px;"></div>
+  <script>
+    (function () {
+      var qs, js, q, s, d = document,
+        gi = d.getElementById,
+        ce = d.createElement,
+        gt = d.getElementsByTagName,
+        id = "typef_orm",
+        b = "https://embed.typeform.com/";
+      if (!gi.call(d, id)) {
+        js = ce.call(d, "script");
+        js.id = id;
+        js.src = b + "embed.js";
+        q = gt.call(d, "script")[0];
+        q.parentNode.insertBefore(js, q)
+      }
+    })()
+  </script>
 </section>
 
 <section id="footer" class="footer-action">
